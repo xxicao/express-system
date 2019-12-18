@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/images/favicon.ico"/>
+    <title><%= title %></title>
+    <script type="text/javascript" charset="utf-8" src="/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/ueditor.all.min.js"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="/lang/zh-cn/zh-cn.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <img alt="Brand" src="/images/tx.jpg" style='width: auto; height: 100%'>
+                </a>
+                <a class="navbar-brand" href="#">后台管理<span class="glyphicon glyphicon-grain" aria-hidden="true"></span></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" id="nav-select">
+                    <% if (select == 0) { %>
+                    <li class="active"><a href="/admin/user">用户管理</a></li>
+                    <% } else {%>
+                    <li><a href="/admin/user">用户管理</a></li>
+                    <% } %>
+
+                    <% if (select == 1) { %>
+                        <li  class="active"><a href="/admin/article">文章管理</a></li>
+                    <% } else {%>
+                        <li><a href="/admin/article">文章管理</a></li>
+                    <% } %>
+
+                    <% if (select == 2) { %>
+                        <li  class="active"><a href="/admin/msg">留言管理</a></li>
+                    <% } else {%>
+                        <li><a href="/admin/msg">留言管理</a></li>
+                    <% } %>
+
+                    <% if (select == 3) { %>
+                        <li  class="active"><a href="#">轮播管理</a></li>
+                    <% } else {%>
+                        <li><a href="#">轮播管理</a></li>
+                    <% } %>
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="javascript:;">欢迎您，<%= username %></a></li>
+                    <li><a href="/admin/logout">退出 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='container'>
+        <% if (component == 'user-list') { %>
+            <% include components/user-list.ejs %>
+        <% }else if(component == 'user-add') { %>
+            <% include components/user-add.ejs %>
+        <% }else if(component == 'article-list') { %>
+            <% include components/article-list.ejs %>
+        <% }else if(component == 'article-add') { %>
+            <% include components/article-add.ejs %>
+        <% }else if(component == 'article-edit') { %>
+            <% include components/article-edit.ejs %>
+        <% }else if(component == 'msg-list') { %>
+            <% include components/msg-list.ejs %>
+        <% } %>
+
+    </div>
+</body>
+
+</html>

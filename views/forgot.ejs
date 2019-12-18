@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/images/favicon.ico"/>
+    <title>管理后台</title>
+    <style>
+        html{
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: -webkit-linear-gradient(#337ab7 , #fff); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient( #337ab7, #fff); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#337ab7, #fff); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#337ab7 , #fff); /* 标准的语法 */
+        }
+
+        .login-form {
+            position: fixed;
+            width: 500px;
+            top: 230px;
+            left: 50%;
+            margin-left: -250px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='login-form'>
+        <div class="panel panel-default" style='margin-bottom: 0'>
+            <div class="panel-heading">密码修改</div>
+            <div class="panel-body">
+                <form action="/admin/forgot" method="POST">
+                    <div class="form-group">
+                        <label for="username">用户名</label>
+                        <input type="text" name='username' class="form-control" id="username" placeholder="用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="newPass">新密码</label>
+                        <input type="password" name='newpass' class="form-control" id="newPass" placeholder="新密码">
+                    </div>
+                    <div class="form-group">
+                        <label for="passAgain">确认密码</label>
+                        <input type="password" name='againpass' class="form-control" id="passAgain" placeholder="确认密码">
+                    </div>
+                    <div class="form-group">
+                        <label for="superPass">超级密码</label>
+                        <input type="password" name='superpass' class="form-control" id="superPass" placeholder="超级密码">
+                    </div>
+                    <div class="row">
+                        <div class='col-md-12'>
+                            <a class="btn btn-default pull-right" href='/admin/login' style='margin-left: 10px;' role="button">返回</a>
+                            <button type="submit" class="btn btn-primary pull-right">修改</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

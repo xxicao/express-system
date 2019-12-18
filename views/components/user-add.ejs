@@ -1,0 +1,20 @@
+<div class='row'>
+    <div class='col-md-6 col-md-offset-3'>
+        <form action="/admin/user/add" method="POST">
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" name='username' class="form-control" id="username" placeholder="用户名">
+            </div>
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="email" name='email' class="form-control" id="email" placeholder="email">
+            </div>
+            <div class="form-group">
+                <label for="newpass">密码</label>
+                <input type="password" name='newpass' class="form-control" id="newpass" placeholder="密码">
+            </div>
+            <button type="submit" class="btn btn-primary">添加</button>
+            <a class="btn btn-default" href='/admin/user' style='margin-left: 10px;' role="button">返回</a>
+        </form>
+    </div>
+</div>

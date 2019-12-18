@@ -1,0 +1,36 @@
+<div class="page-header">
+    <h3>
+        用户列表
+        <a class="btn btn-primary btn-sm pull-right" href="/admin/user/add" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 新增用户</a>
+    </h3>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>密码</th>
+                <th>邮箱</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i< listData.length; i++) { %>
+                <tr>
+                    <td><%= listData[i].ID %></td>
+                    <td><%= listData[i].username %></td>
+                    <td><%= listData[i].password %></td>
+                    <td><%= listData[i].email %></td>
+                    <td>
+                        <a href="/admin/user/delete/<%= listData[i].ID %>">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </a>
+                    </td>
+                </tr>
+            <% } %> 
+               
+        </tbody>
+    </table>
+</div>
+            
